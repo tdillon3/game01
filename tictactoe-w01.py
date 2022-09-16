@@ -14,26 +14,21 @@ def printBoard(board):
     print('-+-+-')
     print(board['7'] + '|' + board['8'] + '|' + board['9'])
 
-
 def main():
 
     turn = 'X'
     count = 0
 
-
     for i in range(10):
         printBoard(theBoard)
         print("It's your turn," + turn + ".Move to which place?")
-
         move = input()        
-
         if theBoard[move] == ' ':
             theBoard[move] = turn
             count += 1
         else:
             print("That place is already filled.\nMove to which place?")
             continue
-
         # Checking for the Win 
         if count >= 5:
             if theBoard['7'] == theBoard['8'] == theBoard['9'] != ' ': # across the top
@@ -76,25 +71,20 @@ def main():
                 print("\nGame Over.\n")                
                 print(" **** " +turn + " won. ****")
                 break 
-
         # Checking for a Draw
         if count == 9:
             print("\nGame Over.\n")                
             print("It's a Draw!")
-
         # Switching Players
         if turn =='X':
             turn = 'O'
         else:
             turn = 'X'        
-    
     # Checking for a Rematch
     restart = input("Do want a Rematch?(y/n)")
     if restart == "y" or restart == "Y":  
         for key in board_keys:
             theBoard[key] = " "
-
         main()
-
 if __name__ == "__main__":
     main()
