@@ -86,5 +86,8 @@ def main():
         for key in board_keys:
             theBoard[key] = " "
         main()
+    else:
+        print("Thanks for Playing Tic Tac Toe!")
+
 if __name__ == "__main__":
     main()
