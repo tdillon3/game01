@@ -82,7 +82,7 @@ def main():
             turn = 'X'        
     # Checking for a Rematch
     restart = input("Do want a Rematch?(y/n)")
-    if restart == "y" or restart == "Y":  
+    while restart == "y" or restart == "Y":  
         for key in board_keys:
             theBoard[key] = " "
         main()
